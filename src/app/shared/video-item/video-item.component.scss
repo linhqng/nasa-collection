@@ -1,0 +1,119 @@
+.video-item {
+  width: 30rem;
+  margin: 0 auto;
+
+  .thumbnail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 16.8rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0.4rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    cursor: pointer;
+
+    .play {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 4.4rem;
+      height: 4.4rem;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      transition: 0.3s;
+
+      &:hover {
+        transform: scale(1.4);
+      }
+
+      &-icon {
+        width: 1.8rem;
+        height: 2.4rem;
+        margin-left: 0.5rem;
+      }
+    }
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    height: 18rem;
+    overflow-y: hidden;
+  }
+
+  .time {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.8rem 0 1.4rem;
+    font-size: 1.2rem;
+    opacity: 0.6;
+  }
+
+  .title {
+    margin-bottom: 1rem;
+    font-size: 2.4rem;
+    line-height: 2.9rem;
+  }
+
+  .description {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    opacity: 0.6;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    margin-top: 1.4rem;
+
+    .action-btn {
+      width: 4.3rem;
+      height: 4.4rem;
+      margin-right: 1rem;
+      border: 0.1rem solid #ceced2;
+      border-radius: 0.3rem;
+      opacity: 0.4;
+      background-color: #ffffff;
+
+      &:hover {
+        opacity: 0.9;
+      }
+
+      .btn-icon {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+
+    .action-btn.filled {
+      opacity: 1;
+    }
+
+    .add-btn {
+      position: relative;
+      width: 100%;
+      padding: 1.2rem 0;
+      border: 0.1rem solid #ceced2;
+      border-radius: 0.3rem;
+      font-size: 1.2rem;
+      background-color: #ffffff;
+      opacity: 0.5;
+
+      &:hover {
+        opacity: 0.9;
+      }
+
+      .btn-icon.add {
+        position: absolute;
+        top: 1rem;
+        left: 1.4rem;
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+}

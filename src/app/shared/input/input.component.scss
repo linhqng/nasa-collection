@@ -1,0 +1,29 @@
+.form-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+
+  .form-control {
+    width: 100%;
+    padding: 2.4rem 1.8rem 0.8rem;
+    font-size: 1.4rem;
+    border: 1px solid #ceced2;
+    border-radius: 0.3rem;
+  }
+
+  .floating-label {
+    position: absolute;
+    left: 2rem;
+    top: 1rem;
+    font-size: 1.6rem;
+    opacity: 0.3;
+    pointer-events: none;
+    transition: 0.2s ease all;
+  }
+
+  input:focus ~ .floating-label,
+  input:not(:focus):valid ~ .floating-label {
+    left: 2rem;
+    top: 0.4rem;
+    font-size: 1.2rem;
+  }
+}

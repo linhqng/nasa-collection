@@ -1,0 +1,17 @@
+<div class="layers">
+  <div class="head">
+    <p>Layers</p>
+    <div class="back" (click)="this.closeLayers.emit()">
+      <img src="assets/svg/back.svg" alt="back" />
+    </div>
+  </div>
+  <div class="list">
+    <ul>
+      <li *ngFor="let item of items">
+        <img src="assets/svg/caret-right.svg" alt="caret-right" />
+        <img src="assets/svg/folder.svg" alt="folder" />
+        <span>{{ item }}</span>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="cls">
+  <div class="collapse-title">
+    <p>{{ title }}</p>
+    <span
+      (click)="collapse.toggle()"
+      [attr.aria-expanded]="!isCollapsed"
+      aria-controls="collapseExample"
+    >
+      <img
+        [src]="
+          isCollapsed ? 'assets/svg/caret-up.svg' : 'assets/svg/caret-down.svg'
+        "
+        alt="caret-up-down"
+      />
+    </span>
+  </div>
+  <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+    <div class="collapse-content">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

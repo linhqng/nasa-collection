@@ -1,0 +1,27 @@
+<div class="inner">
+  <div class="search">
+    <div class="back" routerLink="/">
+      <img src="assets/svg/back.svg" alt="back" />
+      <p>Back to Collection</p>
+    </div>
+    <h3 class="title">Search from Nasa</h3>
+    <input
+      class="search-input"
+      type="text"
+      placeholder="Type something to search..."
+      [(ngModel)]="articleSearch"
+    />
+    <p class="result">1 result for "Moon"</p>
+  </div>
+  <div class="videos">
+    <app-video-item
+      [article]="article"
+      [isSearch]="true"
+      (handleOpenAddModal)="openModal(addModal)"
+      (handleOpenVideo)="openVideo($event)"
+    ></app-video-item>
+  </div>
+  <ng-template #addModal let-modal>
+    <app-modal [modal]="modal"></app-modal>
+  </ng-template>
+</div>

@@ -1,0 +1,61 @@
+<div class="video-item">
+  <div
+    class="thumbnail"
+    [ngStyle]="{
+      'background-image': 'url(' + article.download_url + ')'
+    }"
+    (click)="handlePlayVideo()"
+  >
+    <div class="play">
+      <img src="assets/svg/play.svg" class="play-icon" alt="play" />
+    </div>
+  </div>
+  <div class="info">
+    <div class="time">
+      <p>{{ article.author }}</p>
+      <span>12 Feb, 2018</span>
+    </div>
+    <h4 class="title">Eclipse over the Gulf of Poets</h4>
+    <p class="description">
+      {{
+        "The total phase of the July 27 lunar eclipse lasted for an impressive 103 minutes. That makes it the longest total lunar eclipse."
+          | shorten: 135
+      }}
+    </p>
+  </div>
+  <div class="actions">
+    <ng-template [ngIf]="!isSearch">
+      <button
+        type="button"
+        [class]="isLikeArticle ? 'action-btn filled' : 'action-btn'"
+        (click)="likeArticle()"
+      >
+        <img
+          [src]="
+            isLikeArticle
+              ? 'assets/svg/heart-filled.svg'
+              : 'assets/svg/heart.svg'
+          "
+          class="btn-icon"
+          alt="heart"
+        />
+      </button>
+      <button type="button" class="action-btn">
+        <img src="assets/svg/trash.svg" class="btn-icon" alt="trash" />
+      </button>
+      <button
+        type="button"
+        class="action-btn"
+        (click)="this.handleOpenEditModal.emit()"
+      >
+        <img src="assets/svg/pen.svg" class="btn-icon" alt="pen" />
+      </button>
+    </ng-template>
+    <ng-template [ngIf]="isSearch">
+      <button class="add-btn" (click)="this.handleOpenAddModal.emit()">
+        <img src="assets/svg/new.svg" class="btn-icon add" alt="add" />
+        Add to NASA collection
+      </button>
+    </ng-template>
+  </div>
+</div>

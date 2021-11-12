@@ -1,0 +1,18 @@
+<button class="control-btn" (click)="this.toggleHandoff.emit()">Menu</button>
+<button
+  class="control-btn"
+  [ngClass]="{ active: isHandoffActive }"
+  (click)="this.toggleHandoff.emit()"
+>
+  <img
+    [src]="
+      isHandoffActive ? 'assets/svg/code-light.svg' : 'assets/svg/code.svg'
+    "
+    alt="code"
+  />
+  Handoff
+</button>
+<button class="control-btn">
+  <img src="assets/svg/chat.svg" alt="chat" />
+  No comments
+</button>

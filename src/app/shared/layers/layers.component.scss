@@ -1,0 +1,70 @@
+.layers {
+  position: fixed;
+  width: 30rem;
+  height: 100vh;
+  overflow: scroll;
+  box-shadow: rgb(0 0 0 / 7%) 1px 0px 1px;
+
+  .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5.4rem;
+    padding: 0 1.8rem;
+    box-shadow: rgb(34 45 57 / 18%) 0px 1px 0px 0px;
+
+    p {
+      color: rgb(12, 16, 20);
+      font-size: 1.5rem;
+      font-weight: bold;
+      line-height: 1.15;
+    }
+
+    .back {
+      position: relative;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      color: rgb(85, 85, 85);
+      background-color: rgb(255, 255, 255);
+      box-shadow: rgb(213 220 227) 1px 0px 0px inset,
+        rgb(213 220 227) -1px 0px 0px inset, rgb(213 220 227) 0px 1px 0px inset,
+        rgb(195 204 215) 0px -1px 0px inset, rgb(12 16 20 / 10%) 0px 1px 2px 0px;
+      cursor: pointer;
+
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  .list {
+    padding: 2rem;
+
+    ul {
+      li {
+        display: flex;
+        align-items: center;
+        height: 3rem;
+        margin-bottom: 1rem;
+        padding: 0 1rem;
+        font-size: 1.2rem;
+        border-radius: 0.4rem;
+        opacity: 0.8;
+        cursor: pointer;
+
+        &:hover {
+          color: #ffffff;
+          background-color: #808080;
+        }
+
+        img {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}

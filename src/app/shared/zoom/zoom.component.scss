@@ -1,0 +1,41 @@
+.zoom {
+  display: flex;
+  align-items: center;
+
+  .percent {
+    display: flex;
+    align-items: center;
+    height: 3.4rem;
+    border-radius: 0.6rem;
+    background-color: #ffffff;
+    box-shadow: rgb(34 45 57 / 8%) 0px 0px 0px 1px;
+
+    span {
+      padding: 0 1rem;
+    }
+
+    .minus {
+      border-right: 1px solid #e6e6e6;
+      cursor: pointer;
+    }
+
+    .plus {
+      border-left: 1px solid #e6e6e6;
+      cursor: pointer;
+    }
+
+    .unit {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+  }
+
+  .link {
+    width: 3.4rem;
+    height: 3.4rem;
+    margin-left: 1.5rem;
+    border-radius: 0.6rem;
+    background-color: #ffffff;
+    box-shadow: rgb(34 45 57 / 8%) 0px 0px 0px 1px;
+  }
+}

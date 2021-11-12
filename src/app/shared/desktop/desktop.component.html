@@ -1,0 +1,84 @@
+<div class="desktop">
+  <div class="head">
+    <span class="head-icon">
+      <img src="assets/svg/folder-fill.svg" alt="folder-fill" />
+    </span>
+    <div class="title">
+      <p>Title</p>
+      <span>Group of layers</span>
+    </div>
+    <div class="close" (click)="this.closeDesktop.emit()">
+      <img src="assets/svg/x.svg" alt="x" />
+    </div>
+  </div>
+  <div class="list">
+    <app-collapse>
+      <div class="properties">
+        <div class="item">
+          <p>Width</p>
+          <label>1024px</label>
+        </div>
+        <div class="item">
+          <p>Height</p>
+          <label>55px</label>
+        </div>
+        <div class="item">
+          <p>X Pos</p>
+          <label>0</label>
+        </div>
+        <div class="item">
+          <p>Y Pos</p>
+          <label>0</label>
+        </div>
+      </div>
+    </app-collapse>
+    <app-collapse [title]="'Fill'">
+      <div class="properties">
+        <div class="item">
+          <p>Colour</p>
+          <label
+            ><span
+              class="dot-color"
+              [ngStyle]="{ 'background-color': '#ff0000' }"
+            ></span
+            >#FF0000</label
+          >
+        </div>
+      </div>
+    </app-collapse>
+    <app-collapse [title]="'Format settings'">
+      <div class="properties">
+        <div class="item">
+          <p>Units</p>
+          <label>Pixels</label>
+        </div>
+        <div class="item">
+          <p>Guides</p>
+          <label>Unit based</label>
+        </div>
+      </div>
+      <div class="properties" [ngStyle]="{ 'margin-top': '1.8rem' }">
+        <div class="item">
+          <p>Code</p>
+          <label>CSS</label>
+        </div>
+        <div class="item">
+          <p>Colour Format</p>
+          <label>HEX</label>
+        </div>
+      </div>
+    </app-collapse>
+    <app-collapse [title]="'Document Colours'">
+      <div class="properties">
+        <div class="item color" *ngFor="let color of colors">
+          <label>
+            <span
+              class="dot-color"
+              [ngStyle]="{ 'background-color': color }"
+            ></span>
+          </label>
+        </div>
+      </div>
+    </app-collapse>
+  </div>
+</div>

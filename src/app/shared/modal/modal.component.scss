@@ -1,0 +1,30 @@
+.modal-wrapper {
+  padding: 2rem;
+
+  .modal-header {
+    border-bottom: none;
+
+    .modal-title {
+      font-size: 2.4rem;
+      opacity: 0.75;
+    }
+
+    .close {
+      background-color: #ffffff;
+
+      img {
+        width: 2rem;
+        height: 2.2rem;
+      }
+    }
+  }
+
+  .modal-footer {
+    border-top: none;
+    justify-content: flex-start;
+
+    .icon {
+      margin-right: 1.5rem;
+    }
+  }
+}

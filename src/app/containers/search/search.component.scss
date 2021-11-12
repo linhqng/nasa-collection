@@ -1,0 +1,45 @@
+.inner {
+  padding: 7rem 10rem;
+
+  .search {
+    .back {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.4rem;
+      line-height: 1.7rem;
+      color: #784cc0;
+      cursor: pointer;
+    }
+
+    .title {
+      margin: 4.5rem 0;
+      font-size: 4rem;
+      line-height: 4.8rem;
+      opacity: 0.75;
+    }
+
+    &-input {
+      width: 100%;
+      padding: 1.2rem 3rem;
+      border: 0.1rem solid #ceced2;
+      border-radius: 0.4rem;
+      font-size: 3rem;
+      line-height: 3.6rem;
+
+      &::placeholder {
+        opacity: 0.2;
+      }
+    }
+
+    .result {
+      margin-top: 3.2rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  .videos {
+    display: flex;
+    margin-top: 4rem;
+  }
+}

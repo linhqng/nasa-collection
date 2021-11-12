@@ -1,1 +1,36 @@
-<router-outlet></router-outlet>
+<div class="wrapper">
+  <ng-template [ngIf]="isOpenHandoff && isOpenLayers">
+    <app-layers class="layers" (closeLayers)="closeLayers()"></app-layers>
+  </ng-template>
+  <main
+    [ngStyle]="{
+      margin: isOpenHandoff ? '0 30rem' : '0',
+      'margin-left': !isOpenLayers ? '0' : '30rem'
+    }"
+  >
+    <div
+      class="content"
+      [ngStyle]="{
+        width: isOpenHandoff ? '90%' : '100%',
+        margin: isOpenHandoff ? '10rem auto' : '0'
+      }"
+    >
+      <ng-template [ngIf]="isOpenHandoff">
+        <app-header></app-header>
+      </ng-template>
+      <router-outlet></router-outlet>
+      <ng-template [ngIf]="isOpenHandoff">
+        <app-zoom class="zoom"></app-zoom>
+      </ng-template>
+      <app-control-buttons
+        [ngStyle]="{ left: isOpenLayers ? '32rem' : '2rem' }"
+        [isHandoffActive]="isOpenHandoff"
+        class="control-buttons"
+        (toggleHandoff)="toggleHandoff()"
+      ></app-control-buttons>
+    </div>
+  </main>
+  <ng-template [ngIf]="isOpenHandoff">
+    <app-desktop class="desktop" (closeDesktop)="toggleHandoff()"></app-desktop>
+  </ng-template>
+</div>

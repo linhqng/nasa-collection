@@ -1,0 +1,37 @@
+<div class="modal-wrapper">
+  <div class="modal-header">
+    <h4 class="modal-title">Add to collection</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <img src="assets/svg/close.svg" alt="close" />
+    </button>
+  </div>
+  <div class="modal-body">
+    <app-input
+      label="Title"
+      value="Moon Facts: Fun Information About the Earth's Moon"
+    ></app-input>
+    <app-input
+      label="Title"
+      value="Moon Facts: Fun Information About the Earth's Moon"
+    ></app-input>
+    <app-input
+      label="Title"
+      value="Moon Facts: Fun Information About the Earth's Moon"
+    ></app-input>
+    <app-input
+      label="Title"
+      value="Moon Facts: Fun Information About the Earth's Moon"
+    ></app-input>
+  </div>
+  <div class="modal-footer">
+    <app-button (handleClick)="modal.close('Close click')">
+      <img class="icon" src="assets/svg/check.svg" alt="check" />
+      Add to collection
+    </app-button>
+  </div>
+</div>
