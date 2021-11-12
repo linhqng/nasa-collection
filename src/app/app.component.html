@@ -2,6 +2,12 @@
   <ng-template [ngIf]="isOpenHandoff && isOpenLayers">
     <app-layers class="layers" (closeLayers)="closeLayers()"></app-layers>
   </ng-template>
+  <ng-template [ngIf]="isOpenHandoff && !isOpenLayers">
+    <button class="layers-btn" (click)="closeLayers()">
+      <img src="assets/svg/layer-fill.svg" alt="layers" />
+      Layers
+    </button>
+  </ng-template>
   <main
     [ngStyle]="{
       margin: isOpenHandoff ? '0 30rem' : '0',
