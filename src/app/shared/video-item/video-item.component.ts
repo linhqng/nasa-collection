@@ -1,10 +1,18 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { Article } from '../../core/models';
 
 @Component({
   selector: 'app-video-item',
   templateUrl: './video-item.component.html',
   styleUrls: ['./video-item.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class VideoItemComponent implements OnInit {
   @Input() article: Article = {

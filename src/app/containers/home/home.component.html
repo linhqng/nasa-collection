@@ -8,7 +8,7 @@
   </div>
   <div class="videos">
     <app-video-item
-      *ngFor="let article of articles"
+      *ngFor="let article of articles$ | async"
       [article]="article"
       (handleOpenVideo)="openVideo($event)"
       (handleOpenEditModal)="openModal(addModal)"
