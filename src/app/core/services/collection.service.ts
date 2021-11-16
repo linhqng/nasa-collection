@@ -13,6 +13,10 @@ export class CollectionService {
 
   getArticles(params: {}): Observable<Article[]> {
     let filterParams = new HttpParams();
-    return this.apiService.get('list', filterParams.appendAll(params));
+    return this.apiService.get('v2/list', filterParams.appendAll(params));
+  }
+
+  getArticle(slug: number): Observable<Article> {
+    return this.apiService.get(`id/${slug}/info`);
   }
 }

@@ -15,7 +15,10 @@ export class TransformInterceptorService implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     return next.handle(req).pipe(
       tap((event) => {
-        if (event.type === HttpEventType.Response) {
+        if (
+          event.type === HttpEventType.Response &&
+          event.body instanceof Array
+        ) {
           return event.body.map((item: Article) => {
             const { id, author, download_url } = item;
             return {
@@ -24,6 +27,8 @@ export class TransformInterceptorService implements HttpInterceptor {
               download_url,
             } as Article;
           });
+        } else {
+          return event;
         }
       })
     );
