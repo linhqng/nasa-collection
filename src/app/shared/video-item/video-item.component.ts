@@ -1,5 +1,6 @@
 import {
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   EventEmitter,
   Input,
@@ -27,7 +28,7 @@ export class VideoItemComponent implements OnInit {
 
   public isLikeArticle: boolean = false;
 
-  constructor() {}
+  constructor(private changeDetection: ChangeDetectorRef) {}
 
   ngOnInit(): void {}
 
@@ -36,7 +37,7 @@ export class VideoItemComponent implements OnInit {
   }
 
   public likeArticle(): void {
-    console.log('like article');
     this.isLikeArticle = !this.isLikeArticle;
+    this.changeDetection.detectChanges();
   }
 }

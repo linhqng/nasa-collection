@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const baseUrl = 'https://picsum.photos/v2/';
+const baseUrl = 'https://picsum.photos/';
 
 @Injectable({
   providedIn: 'root',
