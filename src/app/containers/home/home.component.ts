@@ -1,5 +1,5 @@
-import { Component, OnDestroy, OnInit, TemplateRef } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -11,9 +11,8 @@ import { Article } from '../../core/models';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit, OnDestroy {
-  public articles: Article[] = [];
-  private articleSubscription: Subscription = new Subscription();
+export class HomeComponent implements OnInit {
+  public articles$: Observable<Article[]> = new Observable<Article[]>();
 
   constructor(
     private router: Router,
@@ -22,15 +21,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.articleSubscription = this.collectionService
-      .getArticles({ limit: 10 })
-      .subscribe((articles) => {
-        this.articles = articles;
-      });
-  }
-
-  ngOnDestroy() {
-    this.articleSubscription.unsubscribe();
+    this.articles$ = this.collectionService.getArticles({
+      limit: 10,
+    });
   }
 
   public addArticle(): void {
